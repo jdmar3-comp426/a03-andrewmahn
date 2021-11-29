@@ -43,7 +43,7 @@ export function maxAndMin(numbers) {
         ["min", Number.MAX_SAFE_INTEGER],
         ["max", Number.MIN_SAFE_INTEGER]
     ]);
-    for (var i in array) {
+    for (var i in numbers) {
         if (i < minMax.get("min")) {
             minMax.set("min", i);
         } else if (i > minMax.get("max")) {
