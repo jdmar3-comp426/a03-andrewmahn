@@ -21,11 +21,11 @@ see under the methods section
  */
 export const allCarStats = {
     avgMpg: {
-        'city': mpg_data['city_mpg'],
-        'highway': mpg_data['highway_mpg'] 
+        'city': objArray.mao(x => x.city_mpg),
+        'highway': objArray.map(x => x.highway_mpg) 
     },
-    allYearStats: getStatistics(city_mpg['year']),
-    ratioHybrids: mpg_data['hybrid'].filter().length / mpg_data['hybrid'],
+    allYearStats: getStatistics(objArray.map(x => x.year)),
+    ratioHybrids: objArray.map(x => x.hybrid).filter().length / objArray.map(x => x.hybrid),
 };
 
 
