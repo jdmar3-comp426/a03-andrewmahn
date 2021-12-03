@@ -56,12 +56,12 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    let count = new Object()
+    var count = {};
     for (let i = 0; i < array.length; i++) {
-        if (!count.keys().includes(array[i])) {
-            Object.defineProperty(count, i, 1);
+        if (!count.hasOwnProperty(array[i])) {
+            count[i] = 1;
         } else {
-            count.i++;
+            count[i]++;
         }
     }
 }
