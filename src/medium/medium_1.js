@@ -1,3 +1,4 @@
+import { getIncreasingArray } from "../mild/mild_1.js";
 import {variance} from "./data/stats_helpers.js";
 
 /**
@@ -8,7 +9,8 @@ import {variance} from "./data/stats_helpers.js";
  * prototype functions. Very useful
  */
 export function getSum(array) {
-    return Math.sum(array);
+    var reducer = (prev, curr) => prev + curr;
+    return array.reduce(reducer);
 }
 
 
@@ -22,6 +24,7 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
+    array = array.sort((prev, curr) => prev - curr);
     if (array.length % 2 === 0) {
         return (array[Math.floor(array.length / 2)] + array[Math.ceil(array.length / 2)]) / 2;
     }
