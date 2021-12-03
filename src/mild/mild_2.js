@@ -99,6 +99,9 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
-   const { keyList, ...rest } = object;
-   return rest;
+   return Object.entries(object).reduce(
+         (x, [key, value]) => (
+            keyList.indexOf(key) === -1 ? {...a, [key]: value} : x
+         ), {}
+      );
 }
