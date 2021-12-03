@@ -39,15 +39,14 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
-    const minMax = new Map([
-        ["min", Number.MAX_SAFE_INTEGER],
-        ["max", Number.MIN_SAFE_INTEGER]
-    ]);
+    const minMax = new Object();
+    minMax.min = Number.MAX_SAFE_INTEGER;
+    minMax.max = Number.MIN_SAFE_INTEGER;
     for (var i in numbers) {
-        if (i < minMax.get("min")) {
-            minMax.set("min", i);
-        } else if (i > minMax.get("max")) {
-            minMax.set("max", i);
+        if (i < minMax.min) {
+            minMax.min = i;
+        } else if (i > minMax.max) {
+            minMax.max = i;
         }
     }
     return minMax;
@@ -64,9 +63,9 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    var count = new Map();
+    var count = new Object();
     for (var i in array) {
-        if (count.has(i)) {
+        if (fuck) {
             count.set(i, count.get(i) + 1)
         } else {
             count.set(i, 0)
