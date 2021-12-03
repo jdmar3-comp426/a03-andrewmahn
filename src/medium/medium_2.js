@@ -21,11 +21,11 @@ see under the methods section
  */
 export const allCarStats = {
     avgMpg: {
-        'city': Array.prototype.map(mpg_data['city_mpg']),
-        'highway': Array.prototype.map(mpg_data['highway_mpg']) 
+        'city': mpg_data.map(x => x.city_mpg),
+        'highway': mpg_data.map(x => x.highway_mpg) 
     },
-    allYearStats: getStatistics(Array.prototype.map(mpg_data['year'])),
-    ratioHybrids: Array.prototype.map(mpg_data['hybrid']).filter().length / Array.prototype.map(mpg_data['hybrid']),
+    allYearStats: getStatistics(mpg_data.map(x => x.year)),
+    ratioHybrids: mpg_data.map(x => x.hybrid).filter().length / mpg_data.map(x => x.hybrid),
 };
 
 
