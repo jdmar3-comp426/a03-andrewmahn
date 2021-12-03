@@ -34,6 +34,7 @@ export function identifyArray(array) {
          'value': array[i]
       })
    }
+   return arr;
 }
 
 /**
@@ -99,9 +100,7 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
-   return Object.entries(object).reduce(
-         (x, [key, value]) => (
-            keyList.indexOf(key) === -1 ? {...a, [key]: value} : x
-         ), {}
-      );
+   for (let i = 0; i < keyList; i++) {
+      object = removeKeyNonDestructive(object, keyList[i]);
+   }
 }
