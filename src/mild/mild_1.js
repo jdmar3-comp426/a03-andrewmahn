@@ -59,9 +59,9 @@ export function countArray(array) {
     var count = {};
     for (let i = 0; i < array.length; i++) {
         if (!count.hasOwnProperty(array[i])) {
-            count[i] = 1;
+            count[array[i]] = 1;
         } else {
-            count[i]++;
+            count[array[i]]++;
         }
     }
     return count;
