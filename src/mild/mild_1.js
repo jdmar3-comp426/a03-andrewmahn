@@ -64,4 +64,5 @@ export function countArray(array) {
             count[i]++;
         }
     }
+    return count;
 }
