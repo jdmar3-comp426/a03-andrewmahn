@@ -1,4 +1,3 @@
-import { getIncreasingArray } from "../mild/mild_1.js";
 import {variance} from "./data/stats_helpers.js";
 
 /**
@@ -61,14 +60,14 @@ export function getStatistics(array) {
 
     var median = getMedian(array);
 
-    var min = Math.min(array);
+    var min = array.sort((prev, curr) => prev - curr)[0];
 
-    var max = Math.max(array);
+    var max = array.sort((prev, curr) => prev - curr)[array.length - 1];
 
-    var arr_variance = variance(array);
+    var arr_variance = variance(array, mean);
 
     var standard_deviation = Math.sqrt(arr_variance);
 
-    return ["length: " + length, "sum: " + sum, "mean: " + mean, "mediam: " + median, "min: " + min, "max: " + max, "variance: " + arr_variance, "standard_deviation: " + standard_deviation];
+    return ["length: " + length, "sum: " + sum, "mean: " + mean, "median: " + median, "min: " + min, "max: " + max, "variance: " + arr_variance, "standard_deviation: " + standard_deviation];
 }
 
