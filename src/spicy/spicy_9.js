@@ -22,7 +22,9 @@ export const repeat = (fn, n, ...params) => {
             params[i] = NULL;
         }
     }
-    results = params.map(x => fn(x));
+    for (let i = 0; i < n; i++) {
+        results[i] = fn(params[i]);
+    }
     return results;
 };
 
