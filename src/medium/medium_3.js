@@ -46,8 +46,8 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @returns {[]} array of cars
  */
 export function searchName(car_data, searchTerm) {
-    // const searchTermLoc = str => str.indexOf(searchTerm);
-    return car_data.filter(x => x.make.includes(searchTerm)); //.sort((prev, curr) => searchTermLoc(prev) - searchTermLoc(curr));
+    const searchTermLoc = str => str.indexOf(searchTerm);
+    return car_data.filter(x => x.id.includes(searchTerm)).sort((prev, curr) => searchTermLoc(prev) - searchTermLoc(curr));
 }
 
 
